@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import itemGroup %}
+
+{% block title %}
+    {% if items == movies %}
+        豆瓣电影评分
+    {% else %}
+        豆瓣电视剧评分
+    {% endif %}
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <style>
+        .item-list-group {
+            overflow: hidden;
+            padding: 10px;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    {% for item in items %}
+        {{ itemGroup(item.thumbnail,item.title,item.rating) }}
+    {% endfor %}
+{% endblock %}

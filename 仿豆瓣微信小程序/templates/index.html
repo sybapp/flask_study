@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import itemGroup, itemListGroup %}
+
+{% block title %}豆瓣评分{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block body %}
+    {{ itemListGroup('电影', movies, 1) }}
+    {{ itemListGroup('电视剧', tvs, 2) }}
+{% endblock %}

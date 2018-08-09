@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+<div class="container">
+    <div class="search-group">
+        <input type="text" class="search-input">
+    </div>
+    <div class="item-list-group">
+        {% block body %}
+        {% endblock %}
+    </div>
+</div>
+{% block footer %}
+{% endblock %}
+</body>
+</html>
